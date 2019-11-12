@@ -1,0 +1,9 @@
+FROM ubuntu:latest
+
+LABEL maintainer=uchkunfan@gmail.com
+
+RUN apt-get update \
+    apt-get install -y dns-utils
+
+CMD ["sleep","1000"]
+
