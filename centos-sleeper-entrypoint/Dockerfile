@@ -7,3 +7,6 @@ RUN     yum update -y \
 
 ENTRYPOINT ["sleep"]
 
+CMD ["180"]
+
+
