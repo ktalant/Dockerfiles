@@ -4,6 +4,7 @@ RUN apt-get update -y
 EXPOSE 8081
 RUN useradd -ms /bin/bash nexus
 RUN mkdir /app 
+RUN apt install systemd-sysv
 COPY . /app
 WORKDIR /app
 RUN wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
