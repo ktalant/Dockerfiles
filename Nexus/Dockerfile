@@ -13,7 +13,7 @@ RUN chown -R nexus:nexus /app/sonatype-work
 COPY nexus.rc /app/nexus/bin/
 COPY nexus.vmoptions  /app/nexus/bin/
 COPY nexus.service /etc/systemd/system/nexus.service
-RUN chkconfig nexus on && systemctl start nexus
+RUN systemctl enable nexus  && systemctl start nexus
 
 
 
