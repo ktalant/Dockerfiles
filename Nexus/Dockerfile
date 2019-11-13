@@ -2,6 +2,7 @@ FROM centos:7
 LABEL maintainer=uchkunfan@gmail.com
 RUN yum update -y && yum install wget -y \
     && yum install java-1.8.0-openjdk.x86_64 -y
+EXPOSE 8081
 RUN mkdir /app 
 COPY . /app
 WORKDIR /app
