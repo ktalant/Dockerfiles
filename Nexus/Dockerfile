@@ -6,7 +6,7 @@ RUN mkdir /app
 COPY . /app
 WORKDIR /app
 RUN wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
-RUN tar -xvf nexus.tar.gz && mv nexus3* nexus
+RUN tar -xzvf latest-unix.tar.gz && mv nexus-3* nexus
 RUN adduser nexus
 RUN chown -R nexus:nexus /app/nexus
 RUN chown -R nexus:nexus /app/sonatype-work
