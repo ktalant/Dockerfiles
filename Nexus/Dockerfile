@@ -17,7 +17,8 @@ COPY nexus.vmoptions  /app/nexus/bin/
 COPY nexus.service /etc/systemd/system/nexus.service
 RUN chmod 0644 /etc/systemd/system/nexus.service
 
-RUN systemctl enable nexus  && systemctl start nexus
+CMD systemctl enable nexus
 
+CMD systemctl restart nexus
 
 
