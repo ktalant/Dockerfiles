@@ -1,6 +1,6 @@
 FROM openjdk:7
 LABEL maintainer=uchkunfan@gmail.com
-RUN yum update -y 
+RUN apt-get update -y 
 EXPOSE 8081
 RUN mkdir /app 
 COPY . /app
@@ -8,8 +8,8 @@ WORKDIR /app
 RUN wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
 RUN tar -xvf nexus.tar.gz && mv nexus3* nexus
 RUN adduser nexus
-RUN sudo chown -R nexus:nexus /app/nexus
-RUN sudo chown -R nexus:nexus /app/sonatype-work
+RUN chown -R nexus:nexus /app/nexus
+RUN chown -R nexus:nexus /app/sonatype-work
 COPY nexus.rc /app/nexus/bin/
 COPY nexus.vmoptions  /app/nexus/bin/
 COPY nexus.service /etc/systemd/system/nexus.service
