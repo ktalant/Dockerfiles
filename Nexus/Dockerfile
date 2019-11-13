@@ -3,7 +3,6 @@ LABEL maintainer=uchkunfan@gmail.com
 RUN apt-get update -y 
 EXPOSE 8081
 RUN useradd -ms /bin/bash nexus
-USER nexus
 RUN mkdir /app 
 COPY . /app
 WORKDIR /app
