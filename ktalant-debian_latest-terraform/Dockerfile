@@ -1,8 +1,9 @@
 FROM debian:latest
 LABEL Talant Asan talant.py@gmail
 
-RUN apt update -y &&  apt upgrade -y && \
-    apt install -y wget git curl unzip
+RUN apt update &&  apt upgrade -y && \
+    apt install -y wget git curl unzip && \
+    apt install -y --no-install-recommends 
 
 ADD https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip .
 RUN unzip terraform_0.12.20_linux_amd64.zip && \
