@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:latest
 LABEL Talant Asan talant.py@gmail
 
 RUN apt-get update && \
