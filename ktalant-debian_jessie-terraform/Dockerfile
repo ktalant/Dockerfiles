@@ -1,0 +1,11 @@
+FROM debian:jessie
+LABEL Talant Asan talant.py@gmail
+
+RUN apt-get update && \
+    apt install -y wget git curl unzip
+
+ADD https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip .
+RUN unzip terraform_0.12.20_linux_amd64.zip && \
+    mv terraform /usr/local/bin
+
+    
